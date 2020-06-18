@@ -37,9 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title.toString()),
       ),
       body: Center(
-        child: Countdown(
-          duration: Duration(seconds: 15),
-        ),
+        child: Countdown(),
       ),
     );
   }
