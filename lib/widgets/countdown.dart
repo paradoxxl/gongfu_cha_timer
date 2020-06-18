@@ -96,7 +96,8 @@ class _CountdownState extends State<Countdown> {
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: RaisedButton(
                   child: Text('Start'),
-                  onPressed: (_timer != null && _timer.isActive) ? null : startTimer,
+                  onPressed:
+                      (_timer != null && _timer.isActive) ? null : startTimer,
                 ),
               ),
             ),
@@ -106,7 +107,11 @@ class _CountdownState extends State<Countdown> {
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: RaisedButton(
                   child: Text('Stop'),
-                  onPressed: () {},
+                  onPressed: (_timer != null && _timer.isActive)
+                      ? () {
+                          _timer.cancel();
+                        }
+                      : null,
                 ),
               ),
             ),
